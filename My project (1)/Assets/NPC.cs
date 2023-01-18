@@ -32,7 +32,7 @@ public class NPC : MonoBehaviour
             continueButton.SetActive(true);
         }
     }
-public void zeroText()
+    public void zeroText()
     {
         dialogText.text = "";
         index = 0;

@@ -34,11 +34,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "NextLevel")
+        if (collision.tag == "Next Level")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        if (collision.tag == "PreviousLevel")
+        if (collision.tag == "Previous Level")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
