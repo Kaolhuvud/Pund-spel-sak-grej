@@ -25,6 +25,15 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Last_Horizontal", Input.GetAxisRaw("Horizontal"));
             animator.SetFloat("Last_Vertical", Input.GetAxisRaw("Vertical"));
         }
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+        {
+            animator.SetFloat("Last_Horizontal", Input.GetAxisRaw("Horizontal"));
+            animator.SetFloat("Last_Vertical", Input.GetAxisRaw("Vertical"));
+        }
     }
 
     void FixedUpdate()

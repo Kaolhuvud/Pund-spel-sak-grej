@@ -22,6 +22,7 @@ public class NPC : MonoBehaviour
             }
             else
             {
+                Debug.Log("Dialog is active");
                 dialogPanel.SetActive(true);
                 StartCoroutine(Typing());
             }
@@ -66,6 +67,7 @@ public class NPC : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Playerwasindeedclose");
             playerIsClose = true;
         }
     }
