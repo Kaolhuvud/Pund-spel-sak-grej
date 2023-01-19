@@ -12,22 +12,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal"); //Om vi kan gå höger och vänster med WASD
-        movement.y = Input.GetAxisRaw("Vertical"); //Om vi kan gå upp och ner med WASD
+        movement.x = Input.GetAxisRaw("Horizontal"); //Om vi kan gÃ¥ hÃ¶ger och vÃ¤nster med WASD
+        movement.y = Input.GetAxisRaw("Vertical"); //Om vi kan gÃ¥ upp och ner med WASD
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
-
-
-        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
-        {
-            animator.SetFloat("Last_Horizontal", Input.GetAxisRaw("Horizontal"));
-            animator.SetFloat("Last_Vertical", Input.GetAxisRaw("Vertical"));
-        }
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
 
         if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
         {
