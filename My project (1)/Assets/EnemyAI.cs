@@ -12,24 +12,38 @@ public class EnemyAI : MonoBehaviour //Måste ha samma namn som scriptet
     public float minRange; //referarer till enemy's minimum range, så nära den får gå, så den inte kan knuffa vår player 
     public Transform lastHome;
     public Transform nextHome;
+    private int cd;
 
     void FixedUpdate()
     {
         transform.position = Vector3.MoveTowards(transform.position, nextHome.position, speed * Time.deltaTime);
+        cd += 1;
         
         if (transform.position == homePos.position)
         {
-            lastHome = homePos;
-            nextHome = homePos2;
+            if (cd == 100)
+            {
+                lastHome = homePos;
+                nextHome = homePos2;
+                cd = 0;
+            }
         }
         else if (transform.position == homePos2.position)
         {
-            lastHome = homePos2;
-            nextHome = homePos;
+            if (cd == 100)
+            {
+                lastHome = homePos2;
+                nextHome = homePos;
+                cd = 0;
+            }
         }
         else if (Vector3.Distance(target.position, transform.position) <= maxRange && Vector3.Distance(target.position, transform.position) >= minRange)
         {
             FollowPlayer();
+        }
+        else
+        {
+            cd = 0;
         }
     }
     public void FollowPlayer()
