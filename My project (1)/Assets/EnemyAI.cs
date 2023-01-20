@@ -13,12 +13,20 @@ public class EnemyAI : MonoBehaviour //Måste ha samma namn som scriptet
     public Transform lastHome;
     public Transform nextHome;
     private int cd;
+    private Animator anim;
+
+    void Start()
+    {
+        anim = GetComponent<Animator>(); //hämta animator
+    }
 
     void FixedUpdate()
     {
         transform.position = Vector3.MoveTowards(transform.position, nextHome.position, speed * Time.deltaTime);
         cd += 1;
-        
+        anim.SetFloat("Horizontal", (target.position.x - transform.position.x)); //enemy följer efter x axeln
+        anim.SetFloat("Vertical", (target.position.y - transform.position.y));
+
         if (transform.position == homePos.position)
         {
             if (cd == 100)
