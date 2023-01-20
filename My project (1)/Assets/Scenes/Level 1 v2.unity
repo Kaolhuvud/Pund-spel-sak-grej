@@ -643,7 +643,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 78.89258, y: 13.177742}
+  m_AnchoredPosition: {x: 86.28, y: 16.93}
   m_SizeDelta: {x: 158.7852, y: 26.3555}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &366465326
@@ -1101,7 +1101,7 @@ GameObject:
   - component: {fileID: 861732222}
   m_Layer: 0
   m_Name: NPC
-  m_TagString: Untagged
+  m_TagString: Sacrifice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1165,8 +1165,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861732218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.43, y: 1.13, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -4.74, y: 5.88, z: 0}
+  m_LocalScale: {x: 0.5647951, y: 0.51634234, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -2447,8 +2447,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560053452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.9480762, y: 4.6251125, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 13.48, y: 0.4, z: 0}
+  m_LocalScale: {x: 0.46807897, y: 0.45998567, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
