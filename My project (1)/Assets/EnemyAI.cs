@@ -23,12 +23,6 @@ public class EnemyAI : MonoBehaviour //Måste ha samma namn som scriptet
 
     void FixedUpdate()
     {
-        transform.position = Vector3.MoveTowards(transform.position, nextHome.position, speed * Time.deltaTime);
-        cd += 1;
-        anim.SetFloat("Horizontal", (target.position.x - transform.position.x)); //enemy följer efter x axeln
-        anim.SetFloat("Vertical", (target.position.y - transform.position.y));
-        anim.SetFloat("Speed", movement.sqrMagnitude);
-
         if (transform.position == homePos.position)
         {
             if (cd == 100)
@@ -54,10 +48,16 @@ public class EnemyAI : MonoBehaviour //Måste ha samma namn som scriptet
         else
         {
             cd = 0;
+            transform.position = Vector3.MoveTowards(transform.position, nextHome.position, speed * Time.deltaTime);
+            cd += 1;
+            anim.SetFloat("Horizontal", (target.position.x - transform.position.x)); //enemy följer efter x axeln
+            anim.SetFloat("Vertical", (target.position.y - transform.position.y));
+            anim.SetFloat("Speed", movement.sqrMagnitude);
         }
     }
     public void FollowPlayer()
     {
+        
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
 }
