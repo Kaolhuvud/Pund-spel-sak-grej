@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour //Måste ha samma namn som scriptet
     public float speed; //refererar till hur snabbt enemy får gå
     public float maxRange; //refererar till enemy's max range, så långt som den får gå
     public float minRange; //referarer till enemy's minimum range, så nära den får gå, så den inte kan knuffa vår player 
+    Vector2 movement;
     public Transform lastHome;
     public Transform nextHome;
     private int cd;
@@ -26,6 +27,7 @@ public class EnemyAI : MonoBehaviour //Måste ha samma namn som scriptet
         cd += 1;
         anim.SetFloat("Horizontal", (target.position.x - transform.position.x)); //enemy följer efter x axeln
         anim.SetFloat("Vertical", (target.position.y - transform.position.y));
+        anim.SetFloat("Speed", movement.sqrMagnitude);
 
         if (transform.position == homePos.position)
         {
