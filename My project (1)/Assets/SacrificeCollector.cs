@@ -31,5 +31,9 @@ public class SacrificeCollector : MonoBehaviour
             }
             Debug.Log(deaded);
         }
+        if (collision.gameObject.CompareTag("Death"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+        }
     }
 }
